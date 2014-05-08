@@ -1,0 +1,13 @@
+﻿<widget version="0.9.1">
+
+	<name>Insomnia</name>
+	<description>
+		Insomnia
+	</description>
+	<author email="pascal.ruel@wanadoo.fr" href="http://partager.photos.free.fr/gps">
+		zzzzzzzzzz
+	</author>
+		
+	<content src="index.html" />
+					
+</widget>

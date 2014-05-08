@@ -1,0 +1,60 @@
+﻿<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<title>Insomnia zz</title>
+		<style type="text/css">
+			* 				{ 	font-family : Arial,Geneva,sans-serif;  }
+			table			{	border-collapse: collapse; width: 100%; }
+			.title			{	color:#000000; background-color: #A7C942; 	  	padding:3px 7px 2px 7px; 	border:1px solid #98bf21; 	text-align:center; font-size:2em;  }
+			.opt1			{	color:#000000; background-color: #ffffff;	  	padding:3px 7px 2px 7px; 	border:1px solid #98bf21;	}
+			.opt2			{	color:#000000; background-color: #EAF2D3;	 	padding:3px 7px 2px 7px; 	border:1px solid #98bf21; 	text-align:left;	}
+			button			{ 	width:40%; height: 4em; }
+		</style>
+		<script type="text/javascript" src="phonegap.js"></script>
+		<script type="text/javascript" src="js/Insomnia.js"></script>
+		<script type="text/javascript">
+			function init() {
+				// Wait for PhoneGap to load
+				document.addEventListener("deviceready", onDeviceReady, false);
+			}
+			
+			function onDeviceReady() {
+			
+				cordova.addConstructor(Insomnia.install);
+				
+				var success = function() { alert("Success"); };
+				// var error = function(message) { alert("Oopsie! " + message); };
+				var error = function(message) { alert("Oopsie! " + message); };
+				iPlugin.createEvent("keepAwake", success, error);
+			}
+			
+			// ---
+			var iPlugin = {
+					createEvent: function(todo, successCallback, errorCallback) {
+						cordova.exec(
+							successCallback, // success callback function
+							errorCallback, // error callback function
+							'Insomnia', // mapped to our native Java class called "CalendarPlugin"
+							todo, // with this action name
+							[]                  // and this array of custom arguments to create our entry
+						);
+					 }
+				};
+		</script>
+	</head>
+	<body onLoad="init();">
+		<table>
+			<tr><td class="title">Insomnia</td></tr>
+			
+			<tr ><td class="opt1">	<div id="info_0">	
+
+				<button onclick="alert('keep awake');window.plugins.insomnia.keepAwake()">keep awake</button><br><br><br>
+				<button onclick="alert('allow sleep');window.plugins.insomnia.allowSleepAgain()">allow sleep again</button>
+
+							</div>		</td></tr>
+			<tr ><td class="opt2">	<div id="info_1a">	<center><b>zzz</b></center>							</div>		</td></tr>
+			
+		</table>	
+	</body>
+</html>
+ 
