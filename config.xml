@@ -5,10 +5,9 @@
 		zGPS
 		-> remplacé par debug plugin avec PhoneGap
 	</description>
-	<author email="pascal.ruel@wanadoo.fr" href="http://partager.photos.free.fr">
-		Pascal RUEL
+	<author email="partager.photos@free.fr href="http://partager.photos.free.fr">
+		zzz
 	</author>
-	<preference name="phonegap-version" value="3.4.0" />
 	<content src="index.html" />
 					
 </widget>
