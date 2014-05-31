@@ -11,7 +11,9 @@
 			button			{ 	width:40%; height: 4em; }
 		</style>
 		<script type="text/javascript" src="phonegap.js"></script>
+		<!--
 		<script type="text/javascript" src="js/Insomnia.js"></script>
+		-->
 		<script type="text/javascript">
 			function init() {
 				// Wait for PhoneGap to load
@@ -19,25 +21,23 @@
 			}
 			
 			function onDeviceReady() {
+				// alert("1");
+				// cordova.addConstructor(Insomnia.install);
 				alert("1");
-				cordova.addConstructor(Insomnia.install);
-				alert("2");
 				var success = function() { alert("Success"); };
-				// var error = function(message) { alert("Oopsie! " + message); };
 				var error = function(message) { alert("Oopsie! " + message); };
 				iPlugin.createEvent("keepAwake", success, error);
-				alert("3");
+				alert("2");
 			}
 			
-			// ---
 			var iPlugin = {
 					createEvent: function(todo, successCallback, errorCallback) {
 						cordova.exec(
-							successCallback, // success callback function
-							errorCallback, // error callback function
-							'Insomnia', // mapped to our native Java class called "CalendarPlugin"
-							todo, // with this action name
-							[]                  // and this array of custom arguments to create our entry
+							successCallback, 	// success callback function
+							errorCallback, 		// error callback function
+							'Insomnia', 		// mapped to our native Java class called "CalendarPlugin"
+							todo, 				// with this action name
+							[]					// and this array of custom arguments to create our entry
 						);
 					 }
 				};
@@ -45,16 +45,24 @@
 	</head>
 	<body onLoad="init();">
 		<table>
-			<tr><td class="title">Insomnia Debug6</td></tr>
-			
-			<tr ><td class="opt1">	<div id="info_0">	
-
-				<button onclick="alert('keep awake');window.plugins.insomnia.keepAwake()">keep awake</button><br><br><br>
-				<button onclick="alert('allow sleep');window.plugins.insomnia.allowSleepAgain()">allow sleep again</button>
-
-							</div>		</td></tr>
-			<tr ><td class="opt2">	<div id="info_1a">	<center><b>zzz</b></center>							</div>		</td></tr>
-			
+			<tr><td class="title">Insomnia Debug</td></tr>
+			<tr >
+				<td class="opt1">	
+					<div id="info_0">	
+						<!--
+						<button onclick="alert('keep awake');window.plugins.insomnia.keepAwake()">keep awake</button><br><br><br>
+						<button onclick="alert('allow sleep');window.plugins.insomnia.allowSleepAgain()">allow sleep again</button>
+						-->
+					</div>
+				</td>
+			</tr>
+			<tr >
+				<td class="opt2">
+					<div id="info_1a">
+						<center><b>zzz</b></center>
+					</div>
+				</td>
+			</tr>
 		</table>	
 	</body>
 </html>
