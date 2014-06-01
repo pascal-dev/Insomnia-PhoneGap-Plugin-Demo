@@ -1,13 +1,27 @@
-﻿<widget version="0.9.0">
-
-	<name>zGPS</name>
-	<description>
-		zGPS
-		-> remplacé par debug plugin avec PhoneGap
-	</description>
-	<author email="partager.photos@free.fr href="http://partager.photos.free.fr">
-		zzz
-	</author>
-	<content src="index.html" />
-					
-</widget>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<widget xmlns       = "http://www.w3.org/ns/widgets"
+		xmlns:gap       = "http://phonegap.com/ns/1.0"
+		xmlns:android   = "http://schemas.android.com/apk/res/android"
+		id              = "com.zgps.greeeaaat"
+		version         = "0.9.1">
+		
+		<name>zGPS</name>
+		
+		<description>
+			zGPS remplacé par debug plugin avec PhoneGap
+		</description>
+		
+		<author email="partager.photos@free.fr" href="http://partager.photos.free.fr">
+			zzz
+		</author>
+			
+		<content src="index.html" />
+		
+		<access origin="http://partager.photos.free.fr" />
+		
+		<preference name="KeepRunning" value="true" />
+		<preference name="LoadUrlTimeoutValue" value="30000 "/>
+		<preference name="ShowTitle" value="true" />
+		<preference name="LogLevel" value="VERBOSE" />
+						
+	</widget>
